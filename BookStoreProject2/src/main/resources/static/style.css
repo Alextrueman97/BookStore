@@ -1,0 +1,127 @@
+@charset "ISO-8859-1";
+
+body {
+  background-color: #f1f1f1 !important;
+}
+
+.navbar {
+  background-color: #5e5d5d;
+  border: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a,
+.navbar-brand {
+  color: black !important;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #5e5d5d;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #4d4c4c;
+  border: none;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.link-to-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Change the color of the search button */
+.navbar .btn-outline-success {
+    color: #fff;
+    background-color: #5e5d5d; /* Change to match the color of the register button */
+    border-color: none;
+}
+.navbar .btn-outline-success:hover {
+    color: #fff;
+    background-color: #4d4c4c; /* Change to match the color of the register button */
+    border-color: none;
+}
+/* Add a shadow on the bottom of the navbar */
+.navbar {
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.home-page h1 {
+	margin-top:100px;
+	text-align: center;
+}
+
+.home-page p {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.account-page h1{
+	margin-top:100px !important;
+	text-align: center !important;
+}
+
+.account-page p {
+	margin-top: 20px !important;
+	text-align: center !important;
+}
+
+.card-style {
+	margin-top: 100px;
+	position: relative;
+	z-index: 0;
+}
+
+.books-table {
+	width: 100%;
+	max-width: 100%
+}
+
+.btn-addToBasket {
+	color: white;
+	font-size: 12px;
+	padding: 5px 10px;
+	background-color: #5e5d5d;
+  	border: none;
+}
+
+.btn-addToBasket:hover {
+	color: white;
+  	background-color: #4d4c4c;
+  	border: none;
+}
+
+.btn-addToBasket.btn-lg {
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+}
+
+.width {
+	width: auto !important;
+}
+
+.btn2-style{
+	width: 50px;
+	height: 25px;
+}
+
+img{
+	border-radius: 6px;
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Books</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div th:replace="navbar :: navbar"></div>
+	<div class="books-table">
+		<div th:if="${message}" class="alert alert-success" role="alert"
+			id="message-div">
+			<span th:text="${message}"></span>
+		</div>
+		<h1 class="display-3 text-center"></h1>
+
+		<div class="card card-style text-center">
+			<div class="card-header">
+				<h5 class="card-title">Books List</h5>
+			</div>
+			<div class="card-body">
+				<table class="table books-table table-responsive table-striped
+					mx-auto" style="width: 80%">
+					<thead class="thead-dark">
+						<tr>
+							<th class="text-center">Book Title</th>
+							<th class="text-center">Book Author</th>
+							<th class="text-center">Book Price</th>
+							<th class="text-center">More Info</th>
+							<th class="text-center">Add To Basket</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="book : ${booksList}">
+							<td class="text-center" th:text="${book.bookTitle}"></td>
+							<td class="text-center" th:text="${book.bookAuthor}"></td>
+							<td class="text-center" th:text="'£' + ${book.bookPrice}"></td>
+							<td class="text-center"><a
+								th:href="@{/bookInfo/{bookId}(bookId=${book.bookId})}"
+								th:text="more-Info"></a></td>
+							<td class="text-center">
+								<form
+									th:action="@{/addToBasket/{bookId}(bookId=${book.bookId})}"
+									method="post">
+									<button type="submit" class="btn btn-addToBasket">Add
+										to Basket</button>
+								</form>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script>
+		window.setTimeout(function() {
+			var messageDiv = document.getElementById('message-div');
+			if (messageDiv != null) {
+				messageDiv.remove();
+			}
+		}, 3000);
+	</script>
+</body>
+</html>

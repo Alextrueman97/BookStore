@@ -1,0 +1,61 @@
+<!-- on this page there is an error reading the style.css also the nav bar does not function correctly needs looking at
+i believe it may be to do with an error when passing the id for the book through the get mapping -->
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Books</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}" th:src="@{/style.css}" />
+</head>
+<body>
+
+  <div th:replace="navbar :: navbar"></div>
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+         <img th:src="@{${book.bookImageLink}}" class="card-img-top mx-auto d-block" alt="image of books" style="width: 40%; border-radius: 6px;">
+<!--           <img src="https://png.pngtree.com/png-vector/20190117/ourmid/pngtree-book-cartoon-books-simple-png-image_417472.jpg" class="card-img-top mx-auto d-block" alt="image of books" style="width: 40%">
+ -->          <div class="card-body text-center">
+            <h5 class="card-title" th:text="${book.bookTitle}"></h5>
+            <p class="card-text" th:text="${book.bookAuthor}"></p>
+            <p class="card-text" th:text="${book.bookPrice}"></p>
+          </div>
+          <div class="card-body">
+            <p class="card-text" th:text="${book.bookDescription}"></p>
+          </div>
+          <div class="card-footer text-center">
+          <div class="row">
+          	<div class="col-auto">
+            <form th:action="@{/addToBasket/{bookId}(bookId=${book.bookId})}" method="post">
+              <button type="submit" class="btn btn-primary btn-addToBasket btn-lg" style="width: auto; height: auto;">Add to Basket</button>
+            </form>
+            </div>
+            <div class="col-auto">
+            <form th:action="/books">
+              <button type="submit" class="btn btn-primary btn-addToBasket btn-lg" style="width: auto; height: auto;">Back to Books</button>
+            </form>
+            </div>
+            </div>   
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+</html>
