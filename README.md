@@ -40,5 +40,5 @@ The SQL statements to populate the books table is included as the bookStore SQL 
 
 Video Demo of the book store
 ------------------------------------------------------------------------------
-https://user-images.githubusercontent.com/116211278/233425089-2e0deb57-bf37-48b2-b4da-0d728957804f.mp4
+https://github.com/Alextrueman97/BookStore/assets/116211278/21432dd7-745b-40cc-81b3-fb7faa1ea3e0
 
